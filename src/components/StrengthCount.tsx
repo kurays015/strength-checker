@@ -16,20 +16,22 @@ export default async function StrengthCount() {
     (await cookies()).get("privy-id-token")?.value,
   ]);
 
-  if (!cookie)
-    return (
-      <div>
-        Please login to{" "}
-        <Link
-          href="https://claim.monad.xyz"
-          referrerPolicy="no-referrer"
-          target="_blank"
-        >
-          claim.monad.xyz
-        </Link>
-        first to check your strength.
-      </div>
-    );
+  console.log(strengthCount);
+
+  // if (!cookie)
+  //   return (
+  //     <div>
+  //       Please login to{" "}
+  //       <Link
+  //         href="https://claim.monad.xyz"
+  //         referrerPolicy="no-referrer"
+  //         target="_blank"
+  //       >
+  //         claim.monad.xyz
+  //       </Link>
+  //       first to check your strength.
+  //     </div>
+  //   );
 
   return (
     <div>{strengthCount.strength ? strengthCount.strength : "Not found"}</div>
